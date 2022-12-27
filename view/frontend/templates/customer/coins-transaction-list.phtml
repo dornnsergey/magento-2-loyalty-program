@@ -1,0 +1,30 @@
+<div data-bind="scope: 'coins-transaction-grid'">
+<div data-bind="text: totalCoinsMsg"></div>
+<!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ */
+
+$viewModel = $block->getViewModel();
+echo $viewModel->getPager($viewModel->getCollection(), $block->getChildBlock('pager'));
+?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "coins-transaction-grid": {
+                        "component": "Dorn_Loyalty/js/customer/coins-transaction-grid"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+
+

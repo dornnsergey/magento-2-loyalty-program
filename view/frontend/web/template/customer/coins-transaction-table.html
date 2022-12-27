@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>Occasion</th>
+        <th>Amount of Purchase</th>
+        <th>Coins Received</th>
+        <th>Coins Spend</th>
+        <th>Date of Purchase</th>
+    </tr>
+    </thead>
+    <tbody data-bind="foreach: transactions">
+    <tr>
+        <td data-bind="text: occasion"></td>
+        <td data-bind="html: amountOfPurchase"></td>
+        <td data-bind="text: coinsReceived"></td>
+        <td data-bind="text: coinsSpend"></td>
+        <td data-bind="text: dateOfPurchase"></td>
+    </tr>
+    </tbody>
+</table>

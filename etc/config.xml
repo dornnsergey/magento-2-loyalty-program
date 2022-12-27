@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <coins>
+                <active>1</active>
+                <can_use_checkout>1</can_use_checkout>
+                <model>CoinsFacade</model>
+                <order_status>pending</order_status>
+                <title>Coins</title>
+            </coins>
+        </payment>
+    </default>
+</config>

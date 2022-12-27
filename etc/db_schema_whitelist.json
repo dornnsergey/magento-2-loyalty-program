@@ -1,0 +1,24 @@
+{
+    "coins_transaction": {
+        "column": {
+            "id": true,
+            "customer_id": true,
+            "order_id": true,
+            "amount_of_purchase": true,
+            "added_by_admin": true,
+            "coins_received": true,
+            "coins_spend": true,
+            "date_of_purchase": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "COINS_TRANSACTION_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "COINS_TRANSACTION_ORDER_ID_SALES_ORDER_ENTITY_ID": true,
+            "COINS_TRANSACTION_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+        }
+    }
+}
