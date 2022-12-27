@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">coins_received_edit_form.coins_received_edit_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Coin Received</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="save_and_continue" xsi:type="string">Dorn\Loyalty\Block\Adminhtml\Form\SaveButton</item>
+        </item>
+    </argument>
+    <settings>
+        <namespace>coins_received_edit_form</namespace>
+        <dataScope>data.general</dataScope>
+        <deps>
+            <dep>coins_received_edit_form.coins_received_edit_form_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="backButton" class="Dorn\Loyalty\Block\Adminhtml\Form\BackButton"/>
+        </buttons>
+    </settings>
+    <dataSource name="coins_received_edit_form_data_source" component="Magento_Ui/js/form/provider">
+        <settings>
+            <submitUrl path="coins/customer/save"/>
+        </settings>
+        <dataProvider class="Dorn\Loyalty\Ui\Component\Form\Edit\DataProvider"
+                      name="coins_received_edit_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general" sortOrder="10">
+        <settings>
+            <label translate="true">Coins Received</label>
+        </settings>
+        <field name="id" sortOrder="5" formElement="hidden">
+            <settings>
+                <dataType>text</dataType>
+            </settings>
+        </field>
+        <field name="coins_received" sortOrder="10" formElement="input">
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Coins received for this order:</label>
+                <validation>
+                    <rule name="validate-zero-or-greater" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
+</form>

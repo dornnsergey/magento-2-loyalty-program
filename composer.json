@@ -1,0 +1,20 @@
+{
+  "name": "dorn/module-loyalty",
+  "version": "1.0.0",
+  "description": "The module that provides a simple loyalty program in the store.",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "^2.4.5-p1"
+  },
+  "license": [
+    "Open Software License (OSL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Dorn\\Loyalty\\": ""
+    }
+  }
+}

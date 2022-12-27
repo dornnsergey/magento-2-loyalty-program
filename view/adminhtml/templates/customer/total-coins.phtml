@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * @var \Magento\Framework\View\TemplateEngine\Php $this
+ */
+
+$totalCoins = $this->helper(\Dorn\Loyalty\Helper\Data::class)->getCurrentCustomerTotalCoins();
+
+echo __('The customer has %1 coins.', $totalCoins);
